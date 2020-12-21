@@ -18,7 +18,7 @@ pygame.display.set_caption('Змейка')  # можно вывести заго
 clock = pygame.time.Clock()
 
 snake_block = 10  # размер блока еды и змейки
-snake_speed = 15  # скорость нашей змейки
+snake_speed = 25  # скорость нашей змейки
 max_score = 0  # изначально у нас будет самым минимальным значением
 start = False
 
@@ -144,8 +144,6 @@ def gameloop():
         food_rect.y = foody  # Меняем у объекта еды прямоугольника параметры координат
         dis.blit(food, food_rect)  # Отображаем еду
 
-        #  pygame.draw.rect(dis, lime, [foodx, foody, snake_block, snake_block]) # ============================
-
         snake_head = list()
         snake_head.append(x1)
         snake_head.append(y1)
@@ -161,7 +159,7 @@ def gameloop():
         our_snake(snake_block, snake_list)
         your_score(length_of_snake - 1)  # подсчет очков
         if (length_of_snake - 1) > max_score:
-            max_score = (length_of_snake - 1) # проверка и запись рекорда
+            max_score = (length_of_snake - 1)  # проверка и запись рекорда
 
         pygame.display.update()  # фиксируем изменения наши и применяем их
 
